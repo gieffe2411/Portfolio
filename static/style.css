@@ -1,0 +1,100 @@
+:root {
+  --bg: #0b0f19;
+  --card: #121826;
+  --accent: #4f9cff;
+  --text: #e6edf3;
+  --muted: #8b949e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* CENTER HUB */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hub {
+  text-align: center;
+}
+
+.hub h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hub p {
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+.hub-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hub-card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--text);
+  width: 260px;
+  transition: 0.25s;
+  border: 1px solid transparent;
+}
+
+.hub-card:hover {
+  transform: translateY(-8px);
+  border: 1px solid var(--accent);
+  box-shadow: 0 10px 30px rgba(79,156,255,0.2);
+}
+
+.hub-card h2 {
+  margin-bottom: 10px;
+}
+
+/* PAGINE */
+.page {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.page h1 {
+  margin-bottom: 20px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* VARIANTI */
+.amici {
+  --accent: #ff7b72;
+}
+
+.professionale {
+  --accent: #4f9cff;
+}
+
+.pubblico {
+  --accent: #22c55e;
+}
