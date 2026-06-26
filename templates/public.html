@@ -1,27 +1,146 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio Pubblico</title>
-  <link rel="stylesheet" href="..\static\style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
-<body class="page pubblico">
+<body class="portfolio">
 
-<a href="/" class="back">← Torna indietro</a>
 
-<h1>we</h1>
+<style>
+a:link {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  background-color: transparent;
+  text-decoration: none;
+}
 
-<p>za</p>
+a:visited {
+  color: rgb(147, 147, 147);
+  background-color: transparent;
+  text-decoration: none;
+}
 
-<h2>Chi sono</h2>
-<p>S</p>
+a:hover {
+  color: rgb(174, 174, 174);
+  background-color: transparent;
+  text-decoration: underline;
+}
 
-<h2>Praga</h2>
-<ul>
-  <li>Sèp</li>
-  <li>a web</li>
-  <li>fd den</li>
-</ul>
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
 
+<header class="hero">
+    <a href="/" class="back">← Torna indietro</a>
+
+    <div class="hero-content">
+        <img src="../static/images/profile.jpg" class="profile-pic" alt="Profile">
+
+        <div>
+            <h1>gieffe2411</h1>
+            <p class="subtitle">
+                Beep boop creator
+            </p>
+
+            <p>
+Hey, you might know me already, but I am here to introduce myself as the most famous man on the internet. The main question though, what does a simple man like me do for a living?
+            </p>
+        </div>
+    </div>
+</header>
+
+
+<section class="card">
+    <h2>hm?</h2>
+    <p>
+      blah blah blah
+    </p>
+</section>
+
+
+<section class="projects">
+    <h2>My projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <img src="../static/images/project1.png" alt="">
+            <div class="project-info">
+                <h3>Discord Bot</h3>
+                <p>...</p>
+                <a href="#">Scopri di più</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="../static/images/project2.png" alt="">
+            <div class="project-info">
+                <h3>Portfolio Website</h3>
+                <p>...</p>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="../static/images/project3.png" alt="">
+            <div class="project-info">
+                <h3>Dashboard</h3>
+                <p>...</p>
+                <a href="#">Demo</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="card">
+    <h2>Links</h2>
+
+    <div class="skills">
+        <span>beccati questo non ti do i miei link xd lol</span>
+    </div>
+</section>
+
+
+<section class="card">
+    <h2>Discord</h2>
+
+    {% if discord %}
+    <div class="discord-card {{ discord.status }}">
+        <img src="{{ discord.avatar }}" alt="avatar">
+
+        <div class="discord-info">
+            <h3>{{ discord.username }}</h3>
+
+            <p class="status">
+                {% if discord.status == "online" %}🟢 Online{% endif %}
+                {% if discord.status == "idle" %}🟡 Idle{% endif %}
+                {% if discord.status == "dnd" %}🔴 Do Not Disturb{% endif %}
+                {% if discord.status == "offline" %}⚫ Offline{% endif %}
+            </p>
+
+            <p class="activity">
+                {% if discord.activity %}
+                    {{ discord.emoji }} {{ discord.activity }}
+                {% else %}
+                    Nessuna attività
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    {% else %}
+        <p>Discord non disponibile</p>
+    {% endif %}
+</section>
+
+
+<script src="../static/discord.js"></script>
 </body>
 </html>
