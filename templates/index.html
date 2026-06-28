@@ -6,31 +6,69 @@
   <title>Portfolio Hub</title>
   <link rel="stylesheet" href="..\static\style.css">
 </head>
-<body class="center">
+
+
+
+
+<header class="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <h1 class="hero-title">Portfolio</h1>
+            <p class="hero-subtitle">di gieffe2411</p>
+            <input type="button" class="button-scrolldown" onClick="document.getElementById('middle').scrollIntoView();" value="Scopri di più →" />
+        </div>
+
+        <div class="hero-avatar-wrap">
+            <img src="../static/images/profile.jpg" class="hero-avatar" alt="Profile picture">
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<body class="gradient">
 
   <main class="hub">
-    <h1>Portfolio</h1>
-    <p>Scegli</p>
 
-    <div class="hub-cards">
+    <div id="middle" class="hub-cards">
 
-      <div class="card">
-        <h2>Amici</h2>
-        <p>
-          Sezione dedicata agli amici, dove puoi trovare informazioni su di me e sui miei progetti.
-        </p>
-        <a href="friends" class="project-link">Scopri di più →</a>
-      </div>
 
-      <div class="card">
-        <h2>💼 Professionale</h2>
-        <p>Per recruiter e aziende</p>
-      </div>
+      <section class="section-left">
+        <div class="card-home">
+          <h2><ul><li>Public</li></ul></h2>
+          <p>
+            Sezione dedicata agli amici, dove puoi trovare informazioni su di me e sui miei progetti.
+          </p>
+          <a href="friends" class="project-link">Scopri di più →</a>
+        </div>
+      </section>
 
-      <div class="card">
-        <h2>🌍 Pubblico</h2>
-        <p>Versione pubblica per internet</p>
-      </div>
+
+
+
+
+      <section class="section-left">
+        <div class="card-home">
+          <h2><ul><li>Public</li></ul></h2>
+          <p>
+            Sezione dedicata agli amici, dove puoi trovare informazioni su di me e sui miei progetti.
+          </p>
+          <a href="public" class="project-link">Scopri di più →</a>
+        </div>
+      </section>
+
+      <section class="section-left">
+        <div class="card-home">
+          <h2><ul><li>Public</li></ul></h2>
+          <p>
+            Sezione dedicata agli amici, dove puoi trovare informazioni su di me e sui miei progetti.
+          </p>
+          <a href="friends" class="project-link">Scopri di più →</a>
+        </div>
+      </section>
 
     </div>
   </main>
