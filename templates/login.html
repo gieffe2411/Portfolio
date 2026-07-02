@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="fait-gradient">
+    <div class="login-wrap">
+        <form class="login-card" method="post">
+            <h1>Admin</h1>
+            {% if error %}<div class="login-error">{{ error }}</div>{% endif %}
+            <div class="field" style="margin-bottom:18px;">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autofocus required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Accedi</button>
+        </form>
+    </div>
+</body>
+</html>

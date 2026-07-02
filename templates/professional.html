@@ -1,31 +1,135 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio Professionale</title>
-  <link rel="stylesheet" href="..\static\style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gieffe2411 — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..\static\style.css">
 </head>
-<body class="page professionale">
+<body class="fait-gradient">
 
-<a href="/" class="back">← Torna indietro</a>
+<nav class="nav">
+    <a href="/" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M10 3L5 8l5 5"/>
+        </svg>
+        Torna indietro
+    </a>
+</nav>
 
-<h1>Portfolio Professionale!</h1>
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <div class="hero-eyebrow"><span></span>Portfolio</div>
+            <h1 class="hero-title hero-cursor">gieffe2411</h1>
+            <p class="hero-subtitle">Beep boop creator</p>
+            <p class="hero-bio">
+                PROFESSIONAL TEST
+            </p>
+        </div>
 
-<p>Sviluppatore di sviluppazione per sviluppo</p>
+        <div class="hero-avatar-wrap">
+            <img src="../static/images/profile.jpg" class="hero-avatar" alt="Profile picture">
+        </div>
+    </div>
+</header>
 
-<h2>Competenze</h2>
-<ul>
-  <li>quello la</li>
-  <li>quello cola</li>
-  <li>quello pepsi</li>
-</ul>
+<!-- HM? -->
+<section class="section">
+    <p class="section-label">Chi sono</p>
+    <div class="card">
+        <h2>hm?</h2>
+        <p>blah blah blah</p>
+    </div>
+</section>
 
-<h2>Progetti</h2>
-<ul>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-</ul>
+<!-- PROJECTS -->
+<section class="section">
+    <p class="section-label">Progetti</p>
+    <div class="bento">
 
+
+
+        <div class="project-card">
+            <div class="project-thumb-placeholder">🤖</div>
+            <div class="project-body">
+                <h3>Discord Bot</h3>
+                <p>...</p>
+                <a href="#" class="project-link">Scopri di più →</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-thumb-placeholder">🌐</div>
+            <div class="project-body">
+                <h3>Portfolio Website</h3>
+                <p>...</p>
+                <a href="#" class="project-link">GitHub →</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-thumb-placeholder">📊</div>
+            <div class="project-body">
+                <h3>Dashboard</h3>
+                <p>...</p>
+                <a href="#" class="project-link">Demo →</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- LINKS -->
+<section class="section">
+    <p class="section-label">Link</p>
+    <div class="card">
+        <h2>Links</h2>
+        <div class="tag-list">
+            <span class="tag">beccati questo non ti do i miei link xd lol</span>
+        </div>
+    </div>
+</section>
+
+<!-- DISCORD -->
+<section class="section">
+    <p class="section-label">Status</p>
+    <div class="card-gradient">
+        <h2><a href="https://discord.com/users/{{ discord.user_id }}" target="_blank" rel="noopener noreferrer">Discord</a></h2>
+
+        {% if discord %}
+        <div class="discord-card {{ discord.status }}" style="margin-top:18px;">
+            <img src="{{ discord.avatar }}" class="dc-avatar" alt="avatar">
+            <div class="dc-info">
+                <h3>{{ discord.username }}</h3>
+                <div class="dc-status">
+                    <span class="dc-dot"></span>
+                    <span class="dc-status-text">
+                        {% if discord.status == "online" %}Online{% endif %}
+                        {% if discord.status == "idle" %}Idle{% endif %}
+                        {% if discord.status == "dnd" %}Do Not Disturb{% endif %}
+                        {% if discord.status == "offline" %}Offline{% endif %}
+                    </span>
+                </div>
+                <p class="dc-activity">
+                    {% if discord.activity %}
+                        {{ discord.emoji }} {{ discord.activity }}
+                    {% else %}
+                        Nessuna attività
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        {% else %}
+            <p style="color:var(--muted);margin-top:12px;">Discord non disponibile</p>
+        {% endif %}
+    </div>
+</section>
+
+<script src="../static/discord.js"></script>
 </body>
 </html>
